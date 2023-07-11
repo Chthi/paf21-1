@@ -17,7 +17,7 @@ xhost +
 Next, launch the Docker containers with the following command:
 
 ```sh
-docker-compose up -d
+docker compose up -d
 ```
 
 *Note: Make sure to have the Docker images already pre-built prior to this step.*
@@ -30,4 +30,4 @@ Go [here](../components/carla_ros_bridge/ros_entrypoint.sh) for further informat
 
 ### Registering Competition Configurations
 For launching competition comfigurations, just put them inside the config folder
-of the related town accordingly. The docker-compose setup will propagate it to the system.
+of the related town accordingly. The docker compose setup will propagate it to the system.

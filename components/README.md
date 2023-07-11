@@ -6,8 +6,8 @@ Use following command to build all Docker images you'll need for launching
 the CARLA simulation and the driving components.
 
 ```sh
-docker-compose -f carla-sim-build.yml build
-docker-compose -f driving-components-build.yml build
+docker compose -f carla-sim-build.yml build
+docker compose -f driving-components-build.yml build
 ```
 
 *Note: Splitting up the components into CARLA simulation and driving was required
@@ -29,7 +29,7 @@ For preparing the integration test assets, run following command:
 Run following command to execute the integration tests:
 
 ```sh
-docker-compose -f integration-tests-compose.yml up --abort-on-container-exit
+docker compose -f integration-tests-compose.yml up --abort-on-container-exit
 ```
 
 ## CARLA Simulation Components

@@ -1,4 +1,4 @@
-# this is the only docker-compose 2.x version supporting NVIDIA GPUs
+# this is the only docker compose 2.x version supporting NVIDIA GPUs
 version: '2.3'
 
 services:

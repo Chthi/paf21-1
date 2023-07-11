@@ -34,16 +34,16 @@ COMPOSE_FILE=local-carla-sim-compose.yml
 
 # build docker images
 pushd components
-    docker-compose -f carla-sim-build.yml build
+    docker compose -f carla-sim-build.yml build
     if [ $? -ne 0 ]; then exit 1; fi
-    docker-compose -f driving-components-build.yml build
+    docker compose -f driving-components-build.yml build
     if [ $? -ne 0 ]; then exit 1; fi
 popd
 
 # run docker images (needs to disable X11 security feature)
 pushd scenarios
     xhost +
-    docker-compose -f $COMPOSE_FILE up -d
+    docker compose -f $COMPOSE_FILE up # -d
 popd
 
 # run the CARLA simulator

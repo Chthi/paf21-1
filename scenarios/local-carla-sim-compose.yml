@@ -1,4 +1,4 @@
-# this is the only docker-compose 2.x version supporting NVIDIA GPUs
+# this is the only docker compose 2.x version supporting NVIDIA GPUs
 version: '2.3'
 
 services:
@@ -24,7 +24,13 @@ services:
 
   carla-ros-bridge:
     image: carla-ros-bridge
-    runtime: nvidia
+    # runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
     security_opt:
       - seccomp:unconfined
     volumes:
